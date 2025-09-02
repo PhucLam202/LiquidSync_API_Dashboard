@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LiquidSync
 
-## Getting Started
+A modern financial dashboard built with Next.js, React, TailwindCSS, and shadcn/ui featuring a beautiful Peach Fuzz color scheme.
 
-First, run the development server:
+## 🛠️ Tech Stack
 
+- **Next.js 15** - React framework with Turbopack
+- **React 19** - UI library  
+- **TypeScript** - Type safety
+- **TailwindCSS v4** - Styling framework
+- **shadcn/ui** - UI component library
+- **ESLint** - Code linting
+- **Lucide React** - Icon library
+
+## 🚀 Getting Started
+
+### Installation & Development
+
+1. **Install dependencies**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Run development server**
+```bash
+pnpm dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Build for production**
+```bash
+pnpm build
+```
 
-## Learn More
+4. **Run production server**
+```bash
+pnpm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. **Lint code**
+```bash
+pnpm lint
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Next.js app router
+│   ├── globals.css        # Global styles with shadcn/ui themes
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx          # Homepage
+├── components/
+│   ├── ui/               # shadcn/ui components
+│   ├── layout/           # Layout components  
+│   ├── dashboard/        # Dashboard components
+│   └── forms/            # Form components
+├── lib/
+│   └── utils.ts          # Utility functions
+├── hooks/                # Custom React hooks
+├── types/                # TypeScript type definitions
+└── constants/            # Application constants
+```
+
+## 🎨 Components Available
+
+### shadcn/ui Components
+- Button (multiple variants)
+- Card (with header, content)
+- Input
+- And more can be added with: `npx shadcn@latest add [component]`
+
+### Custom Components
+- **Header** - Navigation with wallet connect
+- **DashboardCards** - Statistics display cards
+- **QuickActions** - Action buttons grid
+
+## 📦 Adding New Components
+
+Add shadcn/ui components:
+```bash
+npx shadcn@latest add [component-name]
+```
+
+Available components: button, card, input, dialog, toast, dropdown-menu, and [many more](https://ui.shadcn.com/docs/components).
+
+## 🎯 Features
+
+- ✅ Modern React 19 with Next.js 15
+- ✅ Full TypeScript support
+- ✅ TailwindCSS v4 with modern features  
+- ✅ shadcn/ui component library integration
+- ✅ Dark/light theme support (CSS variables)
+- ✅ Responsive design
+- ✅ Turbopack for fast development
+- ✅ ESLint configuration
+- ✅ Component library organization
+
+## 📝 Learn More
+
+To learn more about the technologies used:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [shadcn/ui Documentation](https://ui.shadcn.com) - component library documentation.
+- [TailwindCSS Documentation](https://tailwindcss.com/docs) - utility-first CSS framework.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚧 Next Steps
+
+1. Add more shadcn/ui components as needed
+2. Set up state management (Zustand/Redux)
+3. Add API integration
+4. Implement wallet connection
+5. Add testing framework
+6. Set up CI/CD
 
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

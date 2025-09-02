@@ -1,26 +1,175 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+
+  /* LiquidSync Peach Fuzz Color Scheme - Exact Colors */
+  /* Main Colors - Using exact hex values */
+  --peach-fuzz: #FFBE98;        /* Pantone 13-1023 equivalent - Main Color */
+  --peach-light: #FFF2E8;       /* Very light peach - Background sections */
+  --peach-soft: #FFD9C4;        /* Soft peach - Secondary buttons */
+  --peach-deep: #FF9B66;        /* Deeper peach - Active states */
+  --coral-accent: #FF8A80;      /* Coral complement - Warning states */
+  --warm-gray: #8B7D7B;         /* Warm neutral - Text secondary */
+  --charcoal: #2D2D2D;          /* Dark neutral - Primary text */
+
+  /* Light Theme - Peach Fuzz Semantic Color Mapping */
+  --background: var(--peach-light);
+  --foreground: var(--charcoal);
+  --card: #FFFFFF;
+  --card-foreground: var(--charcoal);
+  --popover: #FFFFFF;
+  --popover-foreground: var(--charcoal);
+  --primary: var(--peach-fuzz);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--peach-soft);
+  --secondary-foreground: var(--charcoal);
+  --muted: var(--peach-light);
+  --muted-foreground: var(--warm-gray);
+  --accent: var(--peach-deep);
+  --accent-foreground: #FFFFFF;
+  --destructive: var(--coral-accent);
+  --destructive-foreground: #FFFFFF;
+  --border: #F0E6DC;
+  --input: #F8F0E8;
+  --ring: var(--peach-fuzz);
+  --chart-1: var(--peach-fuzz);
+  --chart-2: var(--peach-deep);
+  --chart-3: var(--coral-accent);
+  --chart-4: var(--peach-soft);
+  --chart-5: var(--warm-gray);
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: var(--charcoal);
+  --sidebar-primary: var(--peach-fuzz);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: var(--peach-soft);
+  --sidebar-accent-foreground: var(--charcoal);
+  --sidebar-border: #F0E6DC;
+  --sidebar-ring: var(--peach-fuzz);
+}
+
+.dark {
+  /* Dark mode with better contrast - inspired by expected design */
+  --background: oklch(0.08 0.01 260);        /* Deep blue-gray background like expected */
+  --foreground: oklch(0.95 0.01 260);        /* Light cool text */
+  --card: oklch(0.12 0.015 260);             /* Slightly lighter cards */
+  --card-foreground: oklch(0.90 0.01 260);   /* Light text on cards */
+  --popover: oklch(0.12 0.015 260);          /* Dark popover */
+  --popover-foreground: oklch(0.90 0.01 260); /* Light popover text */
+  --primary: oklch(0.75 0.15 45);            /* Warm accent color */
+  --primary-foreground: oklch(0.08 0.01 260); /* Dark text on primary */
+  --secondary: oklch(0.20 0.02 260);         /* Secondary dark */
+  --secondary-foreground: oklch(0.85 0.01 260); /* Light text */
+  --muted: oklch(0.15 0.015 260);            /* Muted background */
+  --muted-foreground: oklch(0.60 0.01 260);  /* Muted text */
+  --accent: oklch(0.70 0.12 45);             /* Accent similar to primary but darker */
+  --accent-foreground: oklch(0.08 0.01 260); /* Dark text on accent */
+  --destructive: oklch(0.65 0.20 15);        /* Red destructive */
+  --destructive-foreground: oklch(0.95 0.01 260); /* Light text on destructive */
+  --border: oklch(0.25 0.02 260);            /* Subtle borders */
+  --input: oklch(0.15 0.015 260);            /* Input background */
+  --ring: oklch(0.75 0.15 45);               /* Focus ring */
+  --chart-1: oklch(0.75 0.15 45);
+  --chart-2: oklch(0.70 0.12 25);
+  --chart-3: oklch(0.65 0.18 15);
+  --chart-4: oklch(0.60 0.10 200);
+  --chart-5: oklch(0.55 0.08 280);
+  --sidebar: oklch(0.10 0.01 260);           /* Slightly lighter sidebar */
+  --sidebar-foreground: oklch(0.85 0.01 260); /* Sidebar text */
+  --sidebar-primary: oklch(0.75 0.15 45);    /* Primary accent */
+  --sidebar-primary-foreground: oklch(0.08 0.01 260); /* Dark text on primary */
+  --sidebar-accent: oklch(0.18 0.02 260);    /* Sidebar accent background */
+  --sidebar-accent-foreground: oklch(0.85 0.01 260); /* Sidebar accent text */
+  --sidebar-border: oklch(0.20 0.02 260);    /* Sidebar borders */
+  --sidebar-ring: oklch(0.75 0.15 45);       /* Sidebar focus ring */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Peach Fuzz Color Utilities for direct use */
+  .bg-peach-fuzz { background-color: var(--peach-fuzz); }
+  .bg-peach-light { background-color: var(--peach-light); }
+  .bg-peach-soft { background-color: var(--peach-soft); }
+  .bg-peach-deep { background-color: var(--peach-deep); }
+  .bg-coral-accent { background-color: var(--coral-accent); }
+  .bg-warm-gray { background-color: var(--warm-gray); }
+  .bg-charcoal { background-color: var(--charcoal); }
+  
+  .text-peach-fuzz { color: var(--peach-fuzz); }
+  .text-peach-light { color: var(--peach-light); }
+  .text-peach-soft { color: var(--peach-soft); }
+  .text-peach-deep { color: var(--peach-deep); }
+  .text-coral-accent { color: var(--coral-accent); }
+  .text-warm-gray { color: var(--warm-gray); }
+  .text-charcoal { color: var(--charcoal); }
+  
+  .border-peach-fuzz { border-color: var(--peach-fuzz); }
+  .border-peach-light { border-color: var(--peach-light); }
+  .border-peach-soft { border-color: var(--peach-soft); }
+  .border-peach-deep { border-color: var(--peach-deep); }
+  .border-coral-accent { border-color: var(--coral-accent); }
+  .border-warm-gray { border-color: var(--warm-gray); }
+  .border-charcoal { border-color: var(--charcoal); }
+  
+  /* Gradient utilities */
+  .from-peach-fuzz { --tw-gradient-from: var(--peach-fuzz); }
+  .from-peach-light { --tw-gradient-from: var(--peach-light); }
+  .from-peach-soft { --tw-gradient-from: var(--peach-soft); }
+  .to-peach-fuzz { --tw-gradient-to: var(--peach-fuzz); }
+  .to-peach-light { --tw-gradient-to: var(--peach-light); }
+  .to-peach-soft { --tw-gradient-to: var(--peach-soft); }
+  .via-peach-fuzz { --tw-gradient-via: var(--peach-fuzz); }
+  .via-peach-light { --tw-gradient-via: var(--peach-light); }
+  .via-peach-soft { --tw-gradient-via: var(--peach-soft); }
 }
