@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "@/components/ui/sonner";
-import { Web3Providers } from "@/components/providers";
-import { ErrorBoundary, setupGlobalErrorHandling } from "@/components/error-boundary";
+import { Web3Providers } from "@/components/providers/Providers";
+import { ErrorBoundary, setupGlobalErrorHandling } from "@/components/common/shared/ErrorBoundary";
 import "@rainbow-me/rainbowkit/styles.css";
 import "./globals.css";
 

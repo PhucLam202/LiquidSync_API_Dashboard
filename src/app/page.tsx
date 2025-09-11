@@ -1,5 +1,5 @@
-import { Header } from '@/components/layout/Header';
-import { DashboardCards, QuickActions } from '@/components/dashboard/DashboardCards';
+import { Header } from '@/components/common/layout/Header';
+import { DashboardCards, QuickActions } from '@/features/dashboard/components/DashboardCards';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

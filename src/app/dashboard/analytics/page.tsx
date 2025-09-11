@@ -1,4 +1,4 @@
-import { InProcessPage } from "@/components/in-process-page"
+import { InProcessPage } from "@/components/common/shared/InProcessPage"
 
 export default function AnalyticsPage() {
   return (
