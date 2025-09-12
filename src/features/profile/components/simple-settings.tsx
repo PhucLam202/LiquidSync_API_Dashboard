@@ -35,7 +35,7 @@ export function SimpleSettings() {
 
   const handlePasswordChange = async () => {
     if (passwordForm.newPassword !== passwordForm.confirmPassword) {
-      toast.error("New passwords don't match")
+      toast.error("New passwords don&apos;t match")
       return
     }
 
