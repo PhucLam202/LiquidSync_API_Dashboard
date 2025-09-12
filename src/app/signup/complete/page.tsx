@@ -1,4 +1,4 @@
-import { CompleteSignupForm } from "@/components/complete-signup-form"
+import { CompleteSignupForm } from "@/features/auth/components/CompleteSignupForm"
 
 export default function CompleteSignupPage() {
   return (
