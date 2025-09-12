@@ -20,6 +20,7 @@ import {
   LinkEmailToWeb3Request,
   LinkEmailToWeb3Response
 } from '@/types/auth'
+import { getApiConfig } from '@/lib/api-config'
 
 export class AuthAPIError extends Error {
   constructor(
@@ -141,15 +142,34 @@ export class AuthAPIClient {
   private accessToken: string | null = null
 
   constructor() {
-    this.baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || ''
-    if (!this.baseURL) {
-      throw new Error('NEXT_PUBLIC_API_BASE_URL environment variable is required')
+    this.baseURL = this.getApiBaseUrl()
+    // Only throw error in browser environment, not during build
+    if (!this.baseURL && typeof window !== 'undefined') {
+      throw new Error('API base URL could not be determined')
     }
     
     // Load access token from localStorage on initialization
     if (typeof window !== 'undefined') {
       this.accessToken = localStorage.getItem('access_token')
     }
+  }
+
+  /**
+   * Get API base URL based on environment
+   */
+  private getApiBaseUrl(): string {
+    const config = getApiConfig()
+    
+    // Log configuration in development for debugging
+    if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
+      console.log('🔗 AuthAPI Config:', {
+        baseUrl: config.baseUrl,
+        environment: config.environment,
+        autoDetected: config.isAutoDetected
+      })
+    }
+    
+    return config.baseUrl
   }
 
   /**
@@ -180,6 +200,11 @@ export class AuthAPIClient {
     endpoint: string,
     options: RequestInit = {}
   ): Promise<T> {
+    // Runtime check for API base URL
+    if (!this.baseURL) {
+      throw new AuthAPIError('API base URL not configured. Please set NEXT_PUBLIC_API_BASE_URL environment variable.')
+    }
+    
     const url = `${this.baseURL}${endpoint}`
     
     const defaultHeaders: Record<string, string> = {
