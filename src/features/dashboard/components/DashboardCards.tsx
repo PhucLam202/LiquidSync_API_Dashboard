@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
 export function DashboardCards() {
@@ -120,35 +119,3 @@ export function DashboardCards() {
   );
 }
 
-export function QuickActions() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Quick Actions</CardTitle>
-        <CardDescription>
-          Essential DeFi operations for liquid staking and yield optimization
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Button variant="default" size="lg" className="h-14 flex flex-col items-center justify-center">
-            <span className="font-semibold">Convert vTokens</span>
-            <span className="text-xs opacity-80">Liquid staking</span>
-          </Button>
-          <Button variant="secondary" size="lg" className="h-14 flex flex-col items-center justify-center">
-            <span className="font-semibold">Stake Assets</span>
-            <span className="text-xs opacity-80">Earn rewards</span>
-          </Button>
-          <Button variant="outline" size="lg" className="h-14 flex flex-col items-center justify-center">
-            <span className="font-semibold">Calculate Yields</span>
-            <span className="text-xs opacity-80">APY calculator</span>
-          </Button>
-          <Button variant="ghost" size="lg" className="h-14 flex flex-col items-center justify-center">
-            <span className="font-semibold">API Explorer</span>
-            <span className="text-xs opacity-80">Developers</span>
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  );
-}

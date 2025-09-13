@@ -1,5 +1,7 @@
 import { Header } from '@/components/common/layout/Header';
-import { DashboardCards, QuickActions } from '@/features/dashboard/components/DashboardCards';
+import { DashboardCards } from '@/features/dashboard/components/DashboardCards';
+import { Hero } from '@/components/common/sections/Hero';
+import { Footer } from '@/components/common/sections/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -15,6 +17,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      
+      {/* Hero Section */}
+      <Hero />
       
       <main className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
@@ -98,11 +103,6 @@ export default function Home() {
 
         {/* Dashboard Stats */}
         <DashboardCards />
-
-        {/* Quick Actions */}
-        <div className="mb-8">
-          <QuickActions />
-        </div>
 
         <Separator className="my-8" />
 
@@ -205,6 +205,9 @@ export default function Home() {
         </div>
 
       </main>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
