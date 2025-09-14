@@ -1,9 +1,7 @@
 import { Header } from '@/components/common/layout/Header';
-import { DashboardCards } from '@/features/dashboard/components/DashboardCards';
 import { Hero } from '@/components/common/sections/Hero';
+import { KeyFeatures } from '@/components/common/sections/KeyFeatures';
 import { Footer } from '@/components/common/sections/Footer';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import {
   Accordion,
@@ -11,7 +9,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { TrendingUp, Shield, Network } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -20,6 +17,9 @@ export default function Home() {
       
       {/* Hero Section */}
       <Hero />
+      
+      {/* Key Features */}
+      <KeyFeatures />
       
       <main className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
@@ -32,77 +32,6 @@ export default function Home() {
           </p>
         </div>
 
-        <Separator className="my-8" />
-
-        {/* Key Features Section */}
-        <div className="mb-8">
-          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-            Key Features
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Real-time Yield Analytics */}
-            <Card className="backdrop-blur-sm bg-white/50">
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto mb-4 w-12 h-12 flex items-center justify-center">
-                  <TrendingUp size={48} className="text-primary" />
-                </div>
-                <CardTitle className="text-lg">Real-time Yield Analytics</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <CardDescription className="text-center">
-                  Track and analyze yield opportunities across multiple DeFi protocols with real-time data updates.
-                </CardDescription>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary">Average APY: 15.8%</Badge>
-                  <Badge variant="secondary">Update frequency: 60s</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Secure Token Conversion */}
-            <Card className="backdrop-blur-sm bg-white/50">
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto mb-4 w-12 h-12 flex items-center justify-center">
-                  <Shield size={48} className="text-primary" />
-                </div>
-                <CardTitle className="text-lg">Secure Token Conversion</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <CardDescription className="text-center">
-                  Convert tokens safely with multiple security layers and minimal slippage protection.
-                </CardDescription>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="outline">Security layers: 11</Badge>
-                  <Badge variant="outline">Max slippage: 0.5%</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Multi-Protocol Support */}
-            <Card className="backdrop-blur-sm bg-white/50">
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto mb-4 w-12 h-12 flex items-center justify-center">
-                  <Network size={48} className="text-primary" />
-                </div>
-                <CardTitle className="text-lg">Multi-Protocol Support</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <CardDescription className="text-center">
-                  Access multiple blockchain networks and protocols from a single unified interface.
-                </CardDescription>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge>Supported networks: 6</Badge>
-                  <Badge>vTokens available: 11+</Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        <Separator className="my-8" />
-
-        {/* Dashboard Stats */}
-        <DashboardCards />
 
         <Separator className="my-8" />
 
