@@ -54,7 +54,6 @@ const LiveDataPreview: React.FC<LiveDataPreviewProps> = ({
     error,
     lastUpdated,
     responseTime,
-    filters,
     updateFilters,
     refetch,
     clearError,

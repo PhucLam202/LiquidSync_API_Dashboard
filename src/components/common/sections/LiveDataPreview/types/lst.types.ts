@@ -3,8 +3,6 @@
  * Handles Ethereum liquid staking protocol data processing
  */
 
-import { Protocol, TVLData } from './api.types';
-
 // LST Protocol with Ethereum-specific calculations
 export interface LSTProtocol {
   id: string;

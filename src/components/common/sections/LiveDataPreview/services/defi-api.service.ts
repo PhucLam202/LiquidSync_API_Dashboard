@@ -234,7 +234,7 @@ const data = await response.json();`;
         timestamp: new Date().toISOString(),
         responseTime
       };
-    } catch (error) {
+    } catch {
       const responseTime = Date.now() - startTime;
       
       return {

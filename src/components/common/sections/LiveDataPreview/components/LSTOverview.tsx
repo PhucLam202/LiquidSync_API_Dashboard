@@ -5,7 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
   TrendingUp, 
-  TrendingDown,
   Activity,
   Zap,
   BarChart3
@@ -19,8 +18,7 @@ import {
   generateLSTChartData,
   getDisplayProtocolName,
   validateLSTMarketData,
-  generateProtocolTooltipContent,
-  DEFAULT_LST_DISPLAY_OPTIONS
+  generateProtocolTooltipContent
 } from '../utils/lst-utils';
 import LSTMiniDonutChart from './LSTMiniDonutChart';
 

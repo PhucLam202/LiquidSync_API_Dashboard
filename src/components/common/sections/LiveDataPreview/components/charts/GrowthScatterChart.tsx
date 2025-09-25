@@ -15,7 +15,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { TrendingUp } from 'lucide-react';
 import { GrowthChartData } from '../../types/api.types';
-import { formatTVL, formatPercentage, formatTooltipValue } from '../../utils/numberFormatters';
+import { formatPercentage, formatTooltipValue } from '../../utils/numberFormatters';
 
 interface GrowthScatterChartProps {
   data: GrowthChartData[];
@@ -201,9 +201,9 @@ const GrowthScatterChart: React.FC<GrowthScatterChartProps> = ({
               opacity={0.7}
               animationDuration={800}
             >
-              {data.map((entry, index) => (
+              {data.map((entry) => (
                 <circle
-                  key={`cell-${index}`}
+                  key={entry.name}
                   r={Math.max(3, Math.min(15, entry.size))}
                   fill={entry.color}
                   opacity={0.7}
@@ -254,7 +254,7 @@ const GrowthScatterChart: React.FC<GrowthScatterChartProps> = ({
               .filter(d => d.x > 0 && d.y > 0)
               .sort((a, b) => (b.x + b.y) - (a.x + a.y))
               .slice(0, 5)
-              .map((protocol, index) => (
+              .map((protocol) => (
                 <Badge key={protocol.name} variant="outline" className="text-xs">
                   {protocol.name} (+{formatPercentage(protocol.x + protocol.y)})
                 </Badge>

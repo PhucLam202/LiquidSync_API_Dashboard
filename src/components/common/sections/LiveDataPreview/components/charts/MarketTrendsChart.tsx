@@ -2,8 +2,6 @@
 
 import React from 'react';
 import {
-  LineChart,
-  Line,
   AreaChart,
   Area,
   XAxis,
@@ -24,7 +22,7 @@ import {
   Zap
 } from 'lucide-react';
 import { Intelligence } from '../../types/api.types';
-import { formatTVL, formatPercentage, formatTooltipValue } from '../../utils/numberFormatters';
+import { formatPercentage, formatTooltipValue } from '../../utils/numberFormatters';
 
 interface MarketTrendsChartProps {
   data?: Intelligence;

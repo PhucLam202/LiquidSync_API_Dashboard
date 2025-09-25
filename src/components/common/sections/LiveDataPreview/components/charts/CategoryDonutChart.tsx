@@ -125,7 +125,14 @@ const CategoryDonutChart: React.FC<CategoryDonutChartProps> = ({
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
     cx, cy, midAngle, innerRadius, outerRadius, percent
-  }: any) => {
+  }: {
+    cx: number;
+    cy: number;
+    midAngle: number;
+    innerRadius: number;
+    outerRadius: number;
+    percent: number;
+  }) => {
     if (percent < 0.05) return null; // Don't show label if less than 5%
     
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
@@ -196,7 +203,7 @@ const CategoryDonutChart: React.FC<CategoryDonutChartProps> = ({
         <div className="pt-4 border-t space-y-3">
           <h4 className="text-sm font-medium text-muted-foreground">Top Categories</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {data.slice(0, 3).map((category, index) => (
+            {data.slice(0, 3).map((category) => (
               <div key={category.name} className="flex items-center gap-2 p-2 rounded-lg bg-muted/30">
                 <div className="flex items-center gap-2 flex-1">
                   <div 
