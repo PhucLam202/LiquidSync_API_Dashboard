@@ -1,6 +1,7 @@
 import { Header } from '@/components/common/layout/Header';
 import { Hero } from '@/components/common/sections/Hero';
 import { KeyFeatures } from '@/components/common/sections/KeyFeatures';
+import EnhancedLiveDataPreview from '@/components/common/sections/LiveDataPreview/components/EnhancedLiveDataPreview';
 import { Footer } from '@/components/common/sections/Footer';
 import { Separator } from '@/components/ui/separator';
 import {
@@ -20,6 +21,9 @@ export default function Home() {
       
       {/* Key Features */}
       <KeyFeatures />
+      
+      {/* Enhanced Live Data Preview */}
+      <EnhancedLiveDataPreview />
       
       <main className="container mx-auto px-4 py-8">
         {/* Welcome Section */}

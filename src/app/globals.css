@@ -172,4 +172,22 @@
   .via-peach-fuzz { --tw-gradient-via: var(--peach-fuzz); }
   .via-peach-light { --tw-gradient-via: var(--peach-light); }
   .via-peach-soft { --tw-gradient-via: var(--peach-soft); }
+
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  
+  .animate-pause {
+    animation-play-state: paused;
+  }
 }
