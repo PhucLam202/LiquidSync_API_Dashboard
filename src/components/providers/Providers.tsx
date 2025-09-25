@@ -30,12 +30,12 @@ const createQueryClient = () => {
   return new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 1000 * 60 * 5, // 5 minutes
-        retry: false,
-        // Prevent automatic retries during SSR
-        refetchOnWindowFocus: false,
-        refetchOnMount: false,
-        refetchOnReconnect: false,
+        staleTime: 1000 * 60 * 1, // 1 minute for live data
+        retry: 3, // Enable retries for production resilience
+        // Enable real-time features in browser
+        refetchOnWindowFocus: typeof window !== 'undefined',
+        refetchOnMount: true,
+        refetchOnReconnect: typeof window !== 'undefined',
       },
     },
   })
@@ -90,12 +90,14 @@ export function Web3Providers({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // During SSR or before config loads, just render children without Web3 providers
+  // During SSR or before config loads, just render children without Web3 providers but with QueryClient
   if (!mounted || !config || !rainbowTheme || typeof window === 'undefined') {
     return (
-      <AuthProvider>
-        {children}
-      </AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </QueryClientProvider>
     );
   }
 

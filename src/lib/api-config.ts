@@ -31,11 +31,11 @@ export function getApiConfig(): ApiConfig {
 
   switch (nodeEnv) {
     case 'development':
-      baseUrl = 'https://liquidsyncapi-staging.up.railway.app'
+      baseUrl = 'http://localhost:3000'
       environment = 'development'
       break
     case 'production':
-      baseUrl = 'https://defiapi-production.up.railway.app'
+      baseUrl = 'https://liquidsyncapi-staging.up.railway.app'
       environment = 'production'
       break
     default:
