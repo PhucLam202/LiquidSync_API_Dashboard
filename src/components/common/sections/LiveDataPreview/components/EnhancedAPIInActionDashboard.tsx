@@ -22,7 +22,7 @@ import {
   Activity,
   RefreshCw
 } from 'lucide-react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as ChartTooltip, Legend, LabelList, Sector } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as ChartTooltip, Legend } from 'recharts';
 
 import { defiAPI } from '../services/defi-api.service';
 import { TVLOverviewResponse } from '../types/api.types';

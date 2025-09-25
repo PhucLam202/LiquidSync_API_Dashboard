@@ -4,7 +4,6 @@ import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { 
   Select, 
   SelectContent, 
@@ -77,7 +76,7 @@ const InteractiveCharts: React.FC<InteractiveChartsProps> = ({
     const categoryFiltered = filterProtocolsByCategory(protocols, localFilters.category);
     
     // Apply growth filter
-    const growthFiltered = filterProtocolsByGrowth(categoryFiltered, localFilters.growth as any);
+    const growthFiltered = filterProtocolsByGrowth(categoryFiltered, localFilters.growth as 'positive' | 'negative' | 'stable' | 'all');
 
     return {
       originalProtocols: protocols,

@@ -51,9 +51,16 @@ export interface HistoricalContext {
   marketCyclePhase: string;
 }
 
+export interface ChainComparison {
+  chainName: string;
+  tvl: number;
+  protocols: number;
+  change24h: number;
+}
+
 export interface Benchmarks {
   sectorAverage: SectorAverage;
-  chainComparison: any[];
+  chainComparison: ChainComparison[];
   historicalContext: HistoricalContext;
 }
 

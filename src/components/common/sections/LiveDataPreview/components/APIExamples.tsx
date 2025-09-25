@@ -16,7 +16,6 @@ import {
   Zap
 } from 'lucide-react';
 import { APIFilters } from '../types/api.types';
-import { defiAPI } from '../services/defi-api.service';
 
 interface APIExamplesProps {
   currentFilters?: APIFilters | null;
@@ -212,7 +211,6 @@ else:
   }, [currentFilters]);
 
   const examples = generateExamples();
-  const currentExample = examples[activeFormat];
 
   return (
     <div className="space-y-6">

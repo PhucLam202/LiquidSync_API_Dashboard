@@ -137,11 +137,14 @@ export function AuthenticatedConnectButton() {
                       className="h-11 px-3 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white"
                     >
                       {chain.iconUrl && (
-                        <img
-                          alt={chain.name ?? 'Chain icon'}
-                          src={chain.iconUrl}
-                          className="w-4 h-4 mr-2"
-                        />
+                        <>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            alt={chain.name ?? 'Chain icon'}
+                            src={chain.iconUrl}
+                            className="w-4 h-4 mr-2"
+                          />
+                        </>
                       )}
                       {chain.name}
                     </Button>
@@ -153,11 +156,14 @@ export function AuthenticatedConnectButton() {
                   >
                     <div className="flex items-center gap-2">
                       {account.ensAvatar && (
-                        <img
-                          alt={account.ensName ?? account.displayName}
-                          src={account.ensAvatar}
-                          className="w-4 h-4 rounded-full"
-                        />
+                        <>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            alt={account.ensName ?? account.displayName}
+                            src={account.ensAvatar}
+                            className="w-4 h-4 rounded-full"
+                          />
+                        </>
                       )}
                       <span className="truncate">
                         {account.displayName}

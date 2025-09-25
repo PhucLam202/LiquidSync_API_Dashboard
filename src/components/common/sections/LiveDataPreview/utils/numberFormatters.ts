@@ -27,7 +27,7 @@ export const formatLargeNumber = (num: number): string => {
 /**
  * Format currency values with $ prefix
  */
-export const formatCurrency = (num: number, includeDecimals: boolean = false): string => {
+export const formatCurrency = (num: number): string => {
   if (num === 0) return '$0';
   
   const formatted = formatLargeNumber(num);
