@@ -17,7 +17,10 @@ import {
   RefreshCw, 
   AlertCircle,
   TrendingUp,
-  Zap
+  Zap,
+  DollarSign,
+  Users,
+  Globe
 } from 'lucide-react';
 
 import { APIFilters } from './types/api.types';
@@ -193,9 +196,9 @@ const LiveDataPreview: React.FC<LiveDataPreviewProps> = ({
                   size="sm"
                   onClick={handleRefresh}
                   disabled={loading}
-                  className="h-8 px-3"
+                  className="h-8 px-3 button-icon-hover"
                 >
-                  <RefreshCw className={`w-3 h-3 mr-1 ${loading ? 'animate-spin' : ''}`} />
+                  <RefreshCw className={`w-3 h-3 mr-1 icon-hover-white ${loading ? 'animate-spin' : ''}`} />
                   <span className="text-xs">Refresh</span>
                 </Button>
               </div>
@@ -205,20 +208,20 @@ const LiveDataPreview: React.FC<LiveDataPreviewProps> = ({
           <CardContent>
             <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as ActiveTab)}>
               <TabsList className="grid w-full grid-cols-4 mb-6">
-                <TabsTrigger value="lst" className="flex items-center gap-2">
-                  <Zap className="w-4 h-4" />
+                <TabsTrigger value="lst" className="flex items-center gap-2 tab-icon-hover">
+                  <Zap className="w-4 h-4 icon-hover-white" />
                   <span className="hidden sm:inline">LST</span>
                 </TabsTrigger>
-                <TabsTrigger value="overview" className="flex items-center gap-2">
-                  <Activity className="w-4 h-4" />
+                <TabsTrigger value="overview" className="flex items-center gap-2 tab-icon-hover">
+                  <Activity className="w-4 h-4 icon-hover-white" />
                   <span className="hidden sm:inline">Overview</span>
                 </TabsTrigger>
-                <TabsTrigger value="charts" className="flex items-center gap-2">
-                  <BarChart3 className="w-4 h-4" />
+                <TabsTrigger value="charts" className="flex items-center gap-2 tab-icon-hover">
+                  <BarChart3 className="w-4 h-4 icon-hover-white" />
                   <span className="hidden sm:inline">Analytics</span>
                 </TabsTrigger>
-                <TabsTrigger value="examples" className="flex items-center gap-2">
-                  <Code className="w-4 h-4" />
+                <TabsTrigger value="examples" className="flex items-center gap-2 tab-icon-hover">
+                  <Code className="w-4 h-4 icon-hover-white" />
                   <span className="hidden sm:inline">API Code</span>
                 </TabsTrigger>
               </TabsList>
@@ -336,7 +339,7 @@ const LiveDataPreview: React.FC<LiveDataPreviewProps> = ({
                     variant="outline"
                     className="border-white/30 text-white hover:bg-white/10 font-medium"
                     onClick={() => {
-                      window.open('https://docs.liquidsnc.com', '_blank');
+                      window.open('https://liquidsyncapi-staging.up.railway.app/docs', '_blank');
                     }}
                   >
                     View Documentation

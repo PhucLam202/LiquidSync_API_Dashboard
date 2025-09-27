@@ -28,12 +28,7 @@ export default function Home() {
       <main className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-foreground mb-2">
-            Welcome to LiquidSync
-          </h2>
-          <p className="text-muted-foreground">
-            Unified DeFi platform for liquid staking analytics and smart yield optimization
-          </p>
+          
         </div>
 
 

@@ -35,7 +35,7 @@ export function Header() {
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="#" className="text-gray-600 hover:text-gray-900 transition-colors px-4 py-2">
+              <NavigationMenuLink href="https://liquidsync.up.railway.app/docs" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors px-4 py-2">
                 API Docs
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -56,7 +56,7 @@ export function Header() {
                     href="https://twitter.com/liquidsync" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 transition-colors"
+                    className="text-gray-900 hover:text-gray-900 transition-colors"
                   >
                     <Twitter size={20} />
                   </a>
@@ -82,8 +82,20 @@ export function Header() {
               </Tooltip>
             </div>
           </TooltipProvider>
-          <Button variant="default" size="sm">
-            Dashboard
+          <Button 
+            variant="default" 
+            size="sm" 
+            asChild
+            className="hover:bg-primary/80 hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out"
+          >
+            <a 
+              href="https://liquid-sync-api-dashboard.vercel.app/dashboard" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center"
+            >
+              Dashboard
+            </a>
           </Button>
         </div>
       </div>
