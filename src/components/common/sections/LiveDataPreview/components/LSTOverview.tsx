@@ -120,7 +120,7 @@ const LSTOverview: React.FC<LSTOverviewProps> = ({
             <CardContent className="pt-4 pb-3">
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5">
-                  <BarChart3 className="w-3.5 h-3.5 text-blue-600" />
+                  <BarChart3 className="w-3.5 h-3.5 text-blue-600 hover:text-blue-600" />
                   <span className="text-xs font-medium text-blue-800">Ethereum TVL</span>
                 </div>
                 <div className="text-lg font-bold text-blue-900">
@@ -138,7 +138,7 @@ const LSTOverview: React.FC<LSTOverviewProps> = ({
             <CardContent className="pt-4 pb-3">
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5">
-                  <Activity className="w-3.5 h-3.5 text-[#FF8A66]" />
+                  <Activity className="w-3.5 h-3.5 text-[#FF8A66] hover:text-[#FF8A66]" />
                   <span className="text-xs font-medium text-orange-800">LST (ETH)</span>
                 </div>
                 <div className="text-lg font-bold text-orange-900">
@@ -156,7 +156,7 @@ const LSTOverview: React.FC<LSTOverviewProps> = ({
             <CardContent className="pt-4 pb-3">
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5">
-                  <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+                  <TrendingUp className="w-3.5 h-3.5 text-emerald-600 hover:text-emerald-600" />
                   <span className="text-xs font-medium text-emerald-800">Top Mover</span>
                 </div>
                 <div className="text-sm font-bold text-emerald-900 truncate">
